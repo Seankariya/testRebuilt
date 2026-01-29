@@ -26,7 +26,7 @@ public class Feeder extends SubsystemBase {
   }
 
   public Feeder() {
-    feederMotor = new SparkMax(53, MotorType.kBrushless);
+    feederMotor = new SparkMax(3, MotorType.kBrushless);
   }
 
   public void setIdle() {

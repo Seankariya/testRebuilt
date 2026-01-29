@@ -48,8 +48,8 @@ public class runAll extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    shooterSubsystem.setMotorSpeed(dEntry.getDouble(0.1));
-    new WaitCommand(1);
+    // shooterSubsystem.setMotorSpeed(dEntry.getDouble(0.1));
+    // new WaitCommand(5);
     feederSubsystem.setFeederSpeed(pEntry.getDouble(0.1));
     hopperSubsystem.setSpeed(iEntry.getDouble(0.1));
   }
@@ -59,6 +59,7 @@ public class runAll extends Command {
   public void end(boolean interrupted) {
     feederSubsystem.setIdle();
     shooterSubsystem.setIdle();
+    hopperSubsystem.setIdle();
   }
 
 }

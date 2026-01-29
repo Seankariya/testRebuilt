@@ -36,7 +36,7 @@ public class Hopper extends SubsystemBase{
     }
 
     public void setSpeed(double speed) {
-        hopperMotor.set(speed);
+        hopperMotor.set(-speed);
     }
 
     public void setIdle() {

@@ -18,8 +18,8 @@ public final class Constants {
   }
 
       public static class HopperConstants {
-        public static double hopperSpeed = 0.1;
-        public static int HopperMotorID = 1;
+        public static double hopperSpeed = 0.05;
+        public static int HopperMotorID = 60;
     }
 
     public static class shooterConstants {
