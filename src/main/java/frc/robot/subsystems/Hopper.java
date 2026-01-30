@@ -44,10 +44,10 @@ public class Hopper extends SubsystemBase{
     }
 
     public Command SpinCommand() {
-        return new Spin(this, 50);
+        return new Spin(this);
     }
 
-    public Command SpinEntryCommand() {
-        return new Spin(this, speedEntry.getDouble(Constants.HopperConstants.hopperSpeed));
-    }
+    // public Command SpinEntryCommand() {
+    //     return new Spin(this, speedEntry.getDouble(Constants.HopperConstants.hopperSpeed));
+    // }
 }

@@ -8,9 +8,11 @@ import edu.wpi.first.networktables.GenericEntry;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.WaitCommand;
 import frc.robot.Constants.HopperConstants;
 import frc.robot.Constants.shooterConstants;
+import frc.robot.commands.Hopper.Spin;
 import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.Feeder;
 import frc.robot.subsystems.Hopper;
@@ -50,8 +52,15 @@ public class runAll extends Command {
   public void execute() {
     // shooterSubsystem.setMotorSpeed(dEntry.getDouble(0.1));
     // new WaitCommand(5);
-    feederSubsystem.setFeederSpeed(pEntry.getDouble(0.1));
-    hopperSubsystem.setSpeed(iEntry.getDouble(0.1));
+    // feederSubsystem.setFeederSpeed(pEntry.getDouble(0.1));
+    // hopperSubsystem.setSpeed(iEntry.getDouble(0.1));
+
+    Commands.sequence(
+      new shooterCommand(shooterSubsystem),  
+      new WaitCommand(1),
+      new feederCommand(feederSubsystem),
+      new Spin(hopperSubsystem)
+     );
   }
 
   // Called once the command ends or is interrupted.

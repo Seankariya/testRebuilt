@@ -7,8 +7,8 @@ public class Spin extends Command{
     public Hopper hopperSubsystem;
     public double speed;
 
-    public Spin(Hopper hopperSubsytem, double speed) {
-        this.hopperSubsystem = hopperSubsytem;
+    public Spin(Hopper hopperSubsystem) {
+        this.hopperSubsystem = hopperSubsystem;
         this.speed = speed;
     }
 
@@ -19,7 +19,7 @@ public class Spin extends Command{
 
     @Override
     public void execute() {
-        hopperSubsystem.setSpeed(speed);
+        hopperSubsystem.setSpeed(0.12);
     }
 
     @Override

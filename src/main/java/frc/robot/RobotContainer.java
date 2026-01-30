@@ -67,7 +67,7 @@ public class RobotContainer {
     // pressed,
     // cancelling on release.
     driverController.a().whileTrue(m_hopper.SpinCommand());
-    driverController.b().whileTrue(m_hopper.SpinEntryCommand());
+    //driverController.b().whileTrue(m_hopper.SpinEntryCommand());
     driverController.rightBumper().whileTrue(m_shooter.shooterCommand());
     driverController.y().whileTrue(m_feeder.feederCommand());
     driverController.x().whileTrue(new frc.robot.commands.runAll(m_feeder, m_shooter, m_hopper));
